@@ -1,0 +1,22 @@
+<mat-horizontal-stepper [linear]="true">
+    <!-- Paso 1 -->
+    <mat-step>
+      <app-step1 (formSubmit)="receiveStep1Data($event)"></app-step1>
+      <button mat-button matStepperNext [disabled]="!step1Data">Siguiente</button>
+    </mat-step>
+  
+    <!-- Paso 2 -->
+    <mat-step>
+      <app-step2 (formSubmit)="receiveStep2Data($event)"></app-step2>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button mat-button matStepperNext [disabled]="!step2Data">Siguiente</button>
+    </mat-step>
+  
+    <!-- Paso 3 -->
+    <mat-step>
+      <app-step3 (formSubmit)="receiveStep3Data($event)"></app-step3>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button mat-button (click)="onSubmit()" [disabled]="!step3Data">Finalizar</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+  
