@@ -1,27 +1,10 @@
 # PryStepper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Este proyecto fue creado mediante el comando `ng new pry-stepper --no-standalone`
 
-## Development server
+Existe un componente que aloja a los pasos, funcionando como padre.
+Cada uno de los componentes de los pasos funcionan como "hijos" y tienen sus propios formularios que serán emitidos al componente padre, para que el envíe un solo objeto unico final.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En Angular, el decorador @Output() junto con EventEmitter se utiliza para enviar datos desde un componente hijo a un componente padre mediante un evento personalizado. Esto es especialmente útil para la comunicación entre componentes cuando el flujo de datos va "hacia arriba".
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Lo que no me gusta de esta aproximación es que cada paso tiene ademas del boton siguiente (o anterior, del 2do paso en adelante) un boton guardar para el formulario.
