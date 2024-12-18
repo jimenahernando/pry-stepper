@@ -1,0 +1,12 @@
+<form (ngSubmit)="submitForm()">
+    <h3>Animales Favoritos</h3>
+    <div *ngFor="let animal of animales">
+      <mat-checkbox 
+        (change)="onAnimalChange($event, animal.id)">
+        {{ animal.nombre }}
+      </mat-checkbox>
+    </div>
+  
+    <button mat-button type="submit">Guardar</button>
+  </form>
+  
